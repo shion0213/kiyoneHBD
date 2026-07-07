@@ -31,7 +31,7 @@ body{
         linear-gradient(rgba(255,248,225,.55),rgba(244,233,206,.55)),
         url("assets/paper.png");
 
-    background-size:auto,contain;
+    background-size:100% 100%,100% 100%;
     background-position:center,center;
     background-repeat:no-repeat,no-repeat;
 
@@ -139,10 +139,12 @@ audio{
 
     position:absolute;
 
-    top:-18px;
-    right:-28px;
+    top:-34px;
+    right:-18px;
 
-    width:150px;
+    width:130px;
+
+    transform:rotate(18deg);
 
     pointer-events:none;
 
@@ -155,10 +157,10 @@ audio{
 
     position:absolute;
 
-    bottom:-22px;
-    left:-24px;
+    bottom:-14px;
+    left:-14px;
 
-    width:88px;
+    width:78px;
 
     transform:rotate(-14deg);
 
