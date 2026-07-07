@@ -10,25 +10,37 @@
 
 <body>
 
-<div class="card">
+<div class="stage">
 
-    <img class="card-bg" src="assets/paper_mix.png" alt="予告状">
+    <!-- 封筒(閉じ) -->
+    <img class="env-closed" src="assets/envelope_close.png" alt="">
 
-    <div class="player">
-        <button class="play-btn" id="playBtn" aria-label="再生">
-            <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <svg class="icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-        </button>
+    <!-- 封筒(開き) -->
+    <img class="env-open" src="assets/envelope_open.png" alt="">
 
-        <div class="progress-track" id="progressTrack">
-            <div class="progress-fill" id="progressFill"></div>
+    <!-- 予告状本体 -->
+    <div class="card">
+
+        <img class="card-bg" src="assets/paper_mix.png" alt="予告状">
+
+        <div class="player">
+            <button class="play-btn" id="playBtn" aria-label="再生">
+                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+            </button>
+
+            <div class="progress-track" id="progressTrack">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <span class="time" id="timeLabel">0:00</span>
         </div>
 
-        <span class="time" id="timeLabel">0:00</span>
     </div>
 
     <audio id="audioEl" preload="metadata">
         <source src="audio/message.mp3" type="audio/mpeg">
+        <source src="audio/message.wav" type="audio/wav">
     </audio>
 
 </div>

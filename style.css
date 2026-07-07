@@ -15,39 +15,131 @@ body{
     align-items:center;
 
     padding:8px;
+
+    overflow:hidden;
 }
 
+/* 演出のステージ(封筒と予告状を重ねる場) */
+
+.stage{
+
+    position:relative;
+
+    width:100%;
+    max-width:430px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ------- 封筒(閉じ) ------- */
+
+.env-closed{
+
+    position:absolute;
+
+    width:78%;
+
+    z-index:3;
+
+    /* 表示 → タメ → 消える */
+    animation:closedShow 2.4s ease forwards;
+}
+
+@keyframes closedShow{
+
+    0%{
+        opacity:0;
+        transform:scale(.8) translateY(20px);
+    }
+    18%{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+    /* しばらく静止(タメ) */
+    72%{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+    /* パッと開く準備:少し弾んで消える */
+    88%{
+        opacity:1;
+        transform:scale(1.05) translateY(-4px);
+    }
+    100%{
+        opacity:0;
+        transform:scale(1.05) translateY(-4px);
+    }
+}
+
+/* ------- 封筒(開き) ------- */
+
+.env-open{
+
+    position:absolute;
+
+    width:88%;
+
+    z-index:2;
+
+    opacity:0;
+
+    /* 閉じ封筒が消えるタイミングで登場 */
+    animation:openShow 1.4s ease 2.1s forwards;
+}
+
+@keyframes openShow{
+
+    0%{
+        opacity:0;
+        transform:scale(.9);
+    }
+    35%{
+        opacity:1;
+        transform:scale(1.04);
+    }
+    60%{
+        transform:scale(1);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ------- 予告状 ------- */
+
 .card{
+
+    position:relative;
 
     display:grid;
 
     width:100%;
     max-width:430px;
 
-    animation:cardReveal 1.4s cubic-bezier(.2,.8,.2,1) both;
+    z-index:4;
+
+    opacity:0;
+
+    /* 封筒が開いたあと、奥からせり上がって登場 */
+    animation:cardRise 1.6s cubic-bezier(.2,.8,.2,1) 3.1s forwards;
 }
 
-@keyframes cardReveal{
+@keyframes cardRise{
 
     0%{
         opacity:0;
-        transform:translateY(60px) scale(.92);
-        filter:blur(6px);
+        transform:translateY(38%) scale(.72);
     }
-
+    40%{
+        opacity:1;
+    }
     100%{
         opacity:1;
         transform:translateY(0) scale(1);
-        filter:blur(0);
     }
-}
-
-/* プレイヤーは紙が出きった後に少し遅れて現れる */
-
-@keyframes playerFadeIn{
-
-    0%{ opacity:0; }
-    100%{ opacity:1; }
 }
 
 .card-bg{
@@ -59,6 +151,8 @@ body{
 
     filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 }
+
+/* ------- 音声プレイヤー ------- */
 
 .player{
 
@@ -87,7 +181,15 @@ body{
 
     padding:6px 14px 6px 6px;
 
-    animation:playerFadeIn .8s ease 1.2s both;
+    opacity:0;
+
+    animation:playerFadeIn .8s ease 4.6s forwards;
+}
+
+@keyframes playerFadeIn{
+
+    0%{ opacity:0; }
+    100%{ opacity:1; }
 }
 
 .play-btn{
