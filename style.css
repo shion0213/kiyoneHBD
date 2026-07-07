@@ -14,7 +14,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:24px;
+    padding:12px;
 }
 
 .card{
@@ -35,7 +35,7 @@ body{
     filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 }
 
-.audio-overlay{
+.player{
 
     grid-area:1 / 1;
 
@@ -47,7 +47,90 @@ body{
     margin-left:49.6%;
     margin-top:71.4%;
 
-    width:64%;
-
     transform:translate(-50%,-50%);
+
+    width:60%;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:rgba(20,20,20,.88);
+
+    border-radius:999px;
+
+    padding:6px 14px 6px 6px;
+}
+
+.play-btn{
+
+    flex:none;
+
+    width:26px;
+    height:26px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+}
+
+.play-btn svg{
+
+    width:14px;
+    height:14px;
+
+    fill:#111;
+}
+
+.progress-track{
+
+    flex:1;
+
+    height:4px;
+
+    background:rgba(255,255,255,.3);
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    position:relative;
+}
+
+.progress-fill{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    height:100%;
+
+    width:0%;
+
+    background:#fff;
+
+    border-radius:999px;
+}
+
+.time{
+
+    flex:none;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-family:sans-serif;
+
+    min-width:30px;
+
+    text-align:right;
 }
