@@ -23,6 +23,31 @@ body{
 
     width:100%;
     max-width:430px;
+
+    animation:cardReveal 1.4s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes cardReveal{
+
+    0%{
+        opacity:0;
+        transform:translateY(60px) scale(.92);
+        filter:blur(6px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+}
+
+/* プレイヤーは紙が出きった後に少し遅れて現れる */
+
+@keyframes playerFadeIn{
+
+    0%{ opacity:0; }
+    100%{ opacity:1; }
 }
 
 .card-bg{
@@ -61,6 +86,8 @@ body{
     border-radius:999px;
 
     padding:6px 14px 6px 6px;
+
+    animation:playerFadeIn .8s ease 1.2s both;
 }
 
 .play-btn{
