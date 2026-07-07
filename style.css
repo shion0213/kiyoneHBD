@@ -6,238 +6,41 @@
 
 body{
 
-    font-family:"Noto Serif JP",serif;
-
-    background:
-        radial-gradient(circle at top,#2d2d2d,#111);
-
     min-height:100vh;
+
+    background:radial-gradient(circle at top,#2d2d2d,#111);
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    padding:40px 30px;
+    padding:24px;
 }
 
-.paper{
+.card{
+
+    position:relative;
 
     width:100%;
     max-width:430px;
 
-    background-color:#efe2c4;
-
-    background-image:
-        linear-gradient(rgba(255,248,225,.55),rgba(244,233,206,.55)),
-        url("assets/paper.png");
-
-    background-size:100% 100%,100% 100%;
-    background-position:center,center;
-    background-repeat:no-repeat,no-repeat;
-
-    border:1px solid #8d7b57;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.55);
-
-    padding:38px 26px;
-
-    position:relative;
-
-    overflow:visible;
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 }
 
-/* 紙の四隅 */
-
-.paper::before,
-.paper::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:24px;
-    height:24px;
-
-    border:2px solid #695b3b;
-}
-
-.paper::before{
-
-    top:12px;
-    left:12px;
-
-    border-right:none;
-    border-bottom:none;
-}
-
-.paper::after{
-
-    bottom:12px;
-    right:12px;
-
-    border-left:none;
-    border-top:none;
-}
-
-/* タイトル */
-
-h1{
-
-    text-align:center;
-
-    color:#6f1e18;
-
-    font-size:42px;
-
-    letter-spacing:.18em;
-
-    margin-bottom:12px;
-}
-
-/* 飾り線 */
-
-.divider{
-
-    width:140px;
-    height:2px;
-
-    background:#9f8d66;
-
-    margin:20px auto;
-}
-
-/* 本文 */
-
-.message{
-
-    text-align:center;
-
-    line-height:2.1;
-
-    font-size:18px;
-
-    color:#2c2c2c;
-
-    margin-bottom:28px;
-}
-
-/* プレイヤー */
-
-audio{
+.card-bg{
 
     width:100%;
-
-    margin-bottom:25px;
+    display:block;
 }
 
-/* 羽根ペン(右上) */
-
-.feather-pen{
+.audio-overlay{
 
     position:absolute;
 
-    top:-34px;
-    right:-18px;
+    left:49.6%;
+    top:71.4%;
 
-    width:130px;
+    width:64%;
 
-    transform:rotate(18deg);
-
-    pointer-events:none;
-
-    filter:drop-shadow(0 6px 8px rgba(0,0,0,.35));
-}
-
-/* エースのカード(左下) */
-
-.ace-card{
-
-    position:absolute;
-
-    bottom:-14px;
-    left:-14px;
-
-    width:78px;
-
-    transform:rotate(-14deg);
-
-    pointer-events:none;
-
-    filter:drop-shadow(0 6px 8px rgba(0,0,0,.35));
-}
-
-/* スタンプ（怪盗キッド） */
-
-.stamp{
-
-    display:flex;
-    justify-content:center;
-
-    margin:-6px 0 22px;
-}
-
-.stamp img{
-
-    width:110px;
-
-    opacity:.92;
-
-    transform:rotate(-8deg);
-
-    filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));
-}
-
-/* 封蝋 */
-
-.wax-seal{
-
-    display:flex;
-    justify-content:center;
-
-    margin-top:22px;
-}
-
-.wax-seal img{
-
-    width:70px;
-
-    filter:drop-shadow(0 3px 5px rgba(0,0,0,.3));
-}
-
-/* サイン */
-
-.signature{
-
-    margin-top:35px;
-
-    text-align:right;
-
-    color:#444;
-
-    font-size:18px;
-
-    font-style:italic;
-}
-
-/* スマホ微調整 */
-
-@media(max-width:480px){
-
-    .paper{
-
-        padding:30px 20px;
-    }
-
-    h1{
-
-        font-size:36px;
-    }
-
-    .message{
-
-        font-size:17px;
-    }
+    transform:translate(-50%,-50%);
 }

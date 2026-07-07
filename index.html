@@ -6,58 +6,19 @@
     <title>予告状</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- おしゃれな明朝 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="background"></div>
+<div class="card">
 
-<main class="paper">
+    <img class="card-bg" src="assets/paper_mix.png" alt="予告状">
 
-    <img class="feather-pen" src="assets/feather_pen.png" alt="">
-    <img class="ace-card" src="assets/ace_card.png" alt="">
-
-    <h1>予告状</h1>
-
-    <div class="divider"></div>
-
-    <p class="message">
-
-        プレゼントは確かに頂いた。<br><br>
-
-        返してほしければ、<br>
-        この音声を聞き、<br>
-        私からの挑戦を受けてもらおう。
-
-    </p>
-
-    <div class="stamp">
-        <img src="assets/stamp.png" alt="怪盗キッド">
-    </div>
-
-    <audio controls>
+    <audio class="audio-overlay" controls>
         <source src="audio/message.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="wax-seal">
-        <img src="assets/wax_seal.png" alt="封蝋">
-    </div>
-
-    <div class="signature">
-
-        ── 回答キッド
-
-    </div>
-
-</main>
-
-<script src="script.js"></script>
+</div>
 
 </body>
 </html>
