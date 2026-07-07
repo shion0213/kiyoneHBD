@@ -17,7 +17,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:20px;
+    padding:40px 30px;
 }
 
 .paper{
@@ -25,12 +25,15 @@ body{
     width:100%;
     max-width:430px;
 
-    background:
-        linear-gradient(rgba(255,248,225,.9),rgba(244,233,206,.9)),
+    background-color:#efe2c4;
+
+    background-image:
+        linear-gradient(rgba(255,248,225,.55),rgba(244,233,206,.55)),
         url("assets/paper.png");
 
-    background-size:cover;
-    background-position:center;
+    background-size:auto,contain;
+    background-position:center,center;
+    background-repeat:no-repeat,no-repeat;
 
     border:1px solid #8d7b57;
 
@@ -43,7 +46,7 @@ body{
 
     position:relative;
 
-    overflow:hidden;
+    overflow:visible;
 }
 
 /* 紙の四隅 */
@@ -128,6 +131,40 @@ audio{
     width:100%;
 
     margin-bottom:25px;
+}
+
+/* 羽根ペン(右上) */
+
+.feather-pen{
+
+    position:absolute;
+
+    top:-18px;
+    right:-28px;
+
+    width:150px;
+
+    pointer-events:none;
+
+    filter:drop-shadow(0 6px 8px rgba(0,0,0,.35));
+}
+
+/* エースのカード(左下) */
+
+.ace-card{
+
+    position:absolute;
+
+    bottom:-22px;
+    left:-24px;
+
+    width:88px;
+
+    transform:rotate(-14deg);
+
+    pointer-events:none;
+
+    filter:drop-shadow(0 6px 8px rgba(0,0,0,.35));
 }
 
 /* スタンプ（怪盗キッド） */
