@@ -1,4 +1,0 @@
-このフォルダに「message.mp3」という名前で音声ファイルを入れてください。
-（ファイル名は script.js 内の index.html で参照している名前と合わせる必要があります）
-
-例: audio/message.mp3
