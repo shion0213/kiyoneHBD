@@ -26,10 +26,11 @@ body{
     max-width:430px;
 
     background:
-        linear-gradient(rgba(255,248,225,.94),rgba(244,233,206,.94)),
-        url("assets/paper.jpg");
+        linear-gradient(rgba(255,248,225,.9),rgba(244,233,206,.9)),
+        url("assets/paper.png");
 
     background-size:cover;
+    background-position:center;
 
     border:1px solid #8d7b57;
 
@@ -129,99 +130,42 @@ audio{
     margin-bottom:25px;
 }
 
-/* 答え */
+/* スタンプ（怪盗キッド） */
 
-.answerText{
+.stamp{
 
-    text-align:center;
+    display:flex;
+    justify-content:center;
 
-    margin-bottom:18px;
-
-    font-size:22px;
-
-    letter-spacing:.08em;
+    margin:-6px 0 22px;
 }
 
-/* 入力欄 */
+.stamp img{
 
-input{
+    width:110px;
 
-    width:100%;
+    opacity:.92;
 
-    padding:16px;
+    transform:rotate(-8deg);
 
-    border:none;
-
-    border-bottom:2px solid #7f6f4d;
-
-    background:rgba(255,255,255,.35);
-
-    font-size:18px;
-
-    outline:none;
-
-    transition:.25s;
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));
 }
 
-input:focus{
+/* 封蝋 */
 
-    background:white;
+.wax-seal{
 
-    border-bottom:2px solid #7a1515;
+    display:flex;
+    justify-content:center;
+
+    margin-top:22px;
 }
 
-/* ボタン */
+.wax-seal img{
 
-button{
+    width:70px;
 
-    width:100%;
-
-    margin-top:25px;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:6px;
-
-    cursor:pointer;
-
-    background:#661b17;
-
-    color:white;
-
-    font-size:20px;
-
-    font-family:inherit;
-
-    transition:.2s;
-}
-
-button:hover{
-
-    background:#81231d;
-}
-
-button:active{
-
-    transform:scale(.97);
-}
-
-/* 回答結果 */
-
-#result{
-
-    margin-top:30px;
-
-    text-align:center;
-
-    line-height:2;
-
-    font-size:19px;
-
-    color:#222;
-
-    min-height:80px;
+    filter:drop-shadow(0 3px 5px rgba(0,0,0,.3));
 }
 
 /* サイン */
@@ -257,38 +201,4 @@ button:active{
 
         font-size:17px;
     }
-
-    .answerText{
-
-        font-size:20px;
-    }
-}
-.resultTitle{
-
-    font-size:28px;
-
-    margin-bottom:20px;
-
-    font-weight:bold;
-
-}
-
-.success{
-
-    color:#7a1515;
-
-}
-
-.fail{
-
-    color:#444;
-
-}
-
-.resultMessage{
-
-    line-height:2;
-
-    white-space:normal;
-
 }
