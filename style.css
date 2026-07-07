@@ -19,26 +19,33 @@ body{
 
 .card{
 
-    position:relative;
+    display:grid;
 
     width:100%;
     max-width:430px;
-
-    filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 }
 
 .card-bg{
 
+    grid-area:1 / 1;
+
     width:100%;
     display:block;
+
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 }
 
 .audio-overlay{
 
-    position:absolute;
+    grid-area:1 / 1;
 
-    left:49.6%;
-    top:71.4%;
+    position:relative;
+
+    align-self:start;
+    justify-self:start;
+
+    margin-left:49.6%;
+    margin-top:71.4%;
 
     width:64%;
 
