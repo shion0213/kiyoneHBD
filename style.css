@@ -1,0 +1,294 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Noto Serif JP",serif;
+
+    background:
+        radial-gradient(circle at top,#2d2d2d,#111);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.paper{
+
+    width:100%;
+    max-width:430px;
+
+    background:
+        linear-gradient(rgba(255,248,225,.94),rgba(244,233,206,.94)),
+        url("assets/paper.jpg");
+
+    background-size:cover;
+
+    border:1px solid #8d7b57;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.55);
+
+    padding:38px 26px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* 紙の四隅 */
+
+.paper::before,
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    border:2px solid #695b3b;
+}
+
+.paper::before{
+
+    top:12px;
+    left:12px;
+
+    border-right:none;
+    border-bottom:none;
+}
+
+.paper::after{
+
+    bottom:12px;
+    right:12px;
+
+    border-left:none;
+    border-top:none;
+}
+
+/* タイトル */
+
+h1{
+
+    text-align:center;
+
+    color:#6f1e18;
+
+    font-size:42px;
+
+    letter-spacing:.18em;
+
+    margin-bottom:12px;
+}
+
+/* 飾り線 */
+
+.divider{
+
+    width:140px;
+    height:2px;
+
+    background:#9f8d66;
+
+    margin:20px auto;
+}
+
+/* 本文 */
+
+.message{
+
+    text-align:center;
+
+    line-height:2.1;
+
+    font-size:18px;
+
+    color:#2c2c2c;
+
+    margin-bottom:28px;
+}
+
+/* プレイヤー */
+
+audio{
+
+    width:100%;
+
+    margin-bottom:25px;
+}
+
+/* 答え */
+
+.answerText{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    font-size:22px;
+
+    letter-spacing:.08em;
+}
+
+/* 入力欄 */
+
+input{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-bottom:2px solid #7f6f4d;
+
+    background:rgba(255,255,255,.35);
+
+    font-size:18px;
+
+    outline:none;
+
+    transition:.25s;
+}
+
+input:focus{
+
+    background:white;
+
+    border-bottom:2px solid #7a1515;
+}
+
+/* ボタン */
+
+button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    background:#661b17;
+
+    color:white;
+
+    font-size:20px;
+
+    font-family:inherit;
+
+    transition:.2s;
+}
+
+button:hover{
+
+    background:#81231d;
+}
+
+button:active{
+
+    transform:scale(.97);
+}
+
+/* 回答結果 */
+
+#result{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    line-height:2;
+
+    font-size:19px;
+
+    color:#222;
+
+    min-height:80px;
+}
+
+/* サイン */
+
+.signature{
+
+    margin-top:35px;
+
+    text-align:right;
+
+    color:#444;
+
+    font-size:18px;
+
+    font-style:italic;
+}
+
+/* スマホ微調整 */
+
+@media(max-width:480px){
+
+    .paper{
+
+        padding:30px 20px;
+    }
+
+    h1{
+
+        font-size:36px;
+    }
+
+    .message{
+
+        font-size:17px;
+    }
+
+    .answerText{
+
+        font-size:20px;
+    }
+}
+.resultTitle{
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+
+}
+
+.success{
+
+    color:#7a1515;
+
+}
+
+.fail{
+
+    color:#444;
+
+}
+
+.resultMessage{
+
+    line-height:2;
+
+    white-space:normal;
+
+}
