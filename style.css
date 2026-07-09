@@ -16,7 +16,8 @@ body{
 
     padding:8px;
 
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
 }
 
 /* 演出のステージ(封筒と予告状を重ねる場) */
@@ -269,4 +270,53 @@ body{
     min-width:30px;
 
     text-align:right;
+}
+
+/* ------- 容疑者一覧ボタン ------- */
+
+.suspects-link{
+
+    position:absolute;
+
+    left:50%;
+
+    /* カードの下に配置 */
+    top:calc(100% + 18px);
+
+    transform:translateX(-50%);
+
+    white-space:nowrap;
+
+    display:inline-block;
+
+    padding:12px 30px;
+
+    background:linear-gradient(#7a1c17,#551210);
+
+    color:#f4e9ce;
+
+    font-family:"Noto Serif JP",serif;
+    font-size:16px;
+    letter-spacing:.12em;
+
+    text-decoration:none;
+
+    border:1px solid #d9b25a;
+    border-radius:6px;
+
+    box-shadow:0 6px 16px rgba(0,0,0,.45);
+
+    opacity:0;
+
+    animation:playerFadeIn .8s ease 4.9s forwards;
+}
+
+.suspects-link:hover{
+
+    background:linear-gradient(#8f231d,#671512);
+}
+
+.suspects-link:active{
+
+    transform:translateX(-50%) scale(.97);
 }

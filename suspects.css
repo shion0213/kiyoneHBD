@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Noto Serif JP",serif;
+
+    background:radial-gradient(circle at top,#2d2d2d,#111);
+
+    min-height:100vh;
+
+    padding:28px 16px 48px;
+
+    color:#f4e9ce;
+}
+
+.wrap{
+
+    max-width:920px;
+
+    margin:0 auto;
+}
+
+h1{
+
+    text-align:center;
+
+    color:#e7d6a8;
+
+    font-size:30px;
+
+    letter-spacing:.2em;
+
+    margin-bottom:14px;
+}
+
+.divider{
+
+    width:140px;
+    height:2px;
+
+    background:#9f8d66;
+
+    margin:0 auto 30px;
+}
+
+/* グリッド:デフォルト(PC)は4列 */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+}
+
+.suspect{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.suspect img{
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    object-fit:cover;
+
+    border:2px solid #d9b25a;
+    border-radius:10px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.5);
+}
+
+.suspect figcaption{
+
+    margin-top:12px;
+
+    font-size:19px;
+
+    letter-spacing:.08em;
+
+    color:#f4e9ce;
+}
+
+/* 戻るリンク */
+
+.back-link{
+
+    display:block;
+
+    width:fit-content;
+
+    margin:40px auto 0;
+
+    padding:12px 28px;
+
+    background:linear-gradient(#7a1c17,#551210);
+
+    color:#f4e9ce;
+
+    font-size:16px;
+    letter-spacing:.1em;
+
+    text-decoration:none;
+
+    border:1px solid #d9b25a;
+    border-radius:6px;
+
+    box-shadow:0 6px 16px rgba(0,0,0,.45);
+}
+
+.back-link:hover{
+
+    background:linear-gradient(#8f231d,#671512);
+}
+
+.back-link:active{
+
+    transform:scale(.97);
+}
+
+/* スマホ:2列に */
+
+@media(max-width:600px){
+
+    .grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:16px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .suspect figcaption{
+        font-size:17px;
+    }
+}
