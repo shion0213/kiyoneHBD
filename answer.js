@@ -20,16 +20,16 @@ const SUCCESS_MESSAGE = `おめでとう。正解だ。
 // フォームを作ったら、この2つを書き換える
 //------------------------------
 
-// ログ送信を有効にするか（フォーム準備できるまではfalseでOK）
-const LOG_ENABLED = false;
+// ログ送信を有効にするか
+const LOG_ENABLED = true;
 
 // GoogleフォームのURL（/formResponse で終わるもの）
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/ここにフォームID/formResponse";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSerux45OyBntEyMN_iDfUxO2xYrmKhgAXwEMtxebmN1dKvxyA/formResponse";
 
-// 各項目のエントリーID（例: "entry.123456789"）
-const FIELD_ANSWER  = "entry.0000000001";   // 入力された答え
-const FIELD_RESULT  = "entry.0000000002";   // 正解/不正解
-const FIELD_ATTEMPT = "entry.0000000003";   // 何回目の挑戦か
+// 各項目のエントリーID
+const FIELD_ANSWER  = "entry.1471133704";   // 答え
+const FIELD_RESULT  = "entry.1252315385";   // 結果
+const FIELD_ATTEMPT = "entry.683952145";    // 回数
 
 
 //==============================
@@ -41,8 +41,53 @@ const submitBtn     = document.getElementById("submitBtn");
 const attemptLabel  = document.getElementById("attemptCounter");
 const resultArea    = document.getElementById("resultArea");
 
+// localStorageのキー
+const STORE_KEY = "yokokujo_answer_state";
+
 let attempts = 0;
 let solved = false;
+
+// 保存された状態を読み込む
+function loadState(){
+    try {
+        const saved = localStorage.getItem(STORE_KEY);
+        if (!saved) return;
+        const s = JSON.parse(saved);
+        attempts = s.attempts || 0;
+        solved   = s.solved || false;
+    } catch(e){
+        // 読み込めなくても続行
+    }
+}
+
+// 状態を保存する
+function saveState(){
+    try {
+        localStorage.setItem(STORE_KEY, JSON.stringify({ attempts, solved }));
+    } catch(e){
+        // 保存できなくても続行
+    }
+}
+
+// ページを開いたとき、前回の状態を復元する
+function restore(){
+
+    loadState();
+    updateCounter();
+
+    if (solved){
+        showResult(true);
+        lockForm();
+        return;
+    }
+
+    if (attempts >= MAX_ATTEMPTS){
+        resultArea.innerHTML = `<div class="locked-note">挑戦回数の上限に達した。</div>`;
+        lockForm();
+    }
+}
+
+restore();
 
 submitBtn.addEventListener("click", handleSubmit);
 
@@ -89,9 +134,11 @@ function handleSubmit(){
 
     if (correct){
         solved = true;
+        saveState();
         showResult(true);
         lockForm();
     } else {
+        saveState();
         showResult(false);
         if (attempts >= MAX_ATTEMPTS){
             lockForm();
